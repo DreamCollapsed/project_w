@@ -1,0 +1,17 @@
+add_library(unique_ptr
+    unique_ptr.cpp
+    unique_ptr.h
+)
+
+target_include_directories(unique_ptr PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${THIRD_PARTY_INSTALL}/include
+)
+
+target_link_libraries(unique_ptr PUBLIC
+    Folly::folly
+    double-conversion::double-conversion
+    gflags::gflags
+    Boost::system
+    Boost::filesystem
+)
